@@ -1,0 +1,31 @@
+Current roms in Layout mode != Rom Information, rescan need it
+
+Create the DB.
+Scan roms in progress, please wait.
+DEBUG: mame  -verifyroms  | grep "^romset" | sed "s/romset //" | sed "s/\[.*\] //" | sed "s/ is good/|good/" | sed "s/ is bad/|bad/" | sed "s/ is best available/|best/"
+...........................DEBUG: SHOW THE ALL LOG OF MAME (WITH THE BAD AND GOOD) IN THE SCAN
+DEBUG:
+mac2bios|best
+h63484|best
+
+Taked 27 seconds to get the middle-list
+DEBUG: mame  -listfull mac2bios 2>/dev/null | grep mac2bios | sed 's/[^ ]*[ ]*\"\(.*\)\"/\1/'
+DEBUG: mame  -listfull h63484 2>/dev/null | grep h63484 | sed 's/[^ ]*[ ]*\"\(.*\)\"/\1/'
+DEBUG: taked 0 seconds to get the final-list.
+Found 2 roms
+Save list roms in DB, please wait...
+New roms added: 0
+New roms deleted: 0
+Bad roms: 0
+Getting MAME info...
+ Please Wait.Traceback (most recent call last):
+  File "pyRetro/pyRetro.py", line 42, in <module>
+    main()
+  File "pyRetro/pyRetro.py", line 26, in main
+    util = Util()
+  File "/home/kh/Development/zotac-emu/pyRetro/pyRetro/Util.py", line 72, in __init__
+    self.scan_roms()
+  File "/home/kh/Development/zotac-emu/pyRetro/pyRetro/Util.py", line 359, in scan_roms
+    for event, game in ET.iterparse(self.mameinfo_xml):
+  File "<string>", line 107, in next
+cElementTree.ParseError: no element found: line 1, column 0

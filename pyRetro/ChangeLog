@@ -1,0 +1,251 @@
+2011-12-08 David Colmenero
+	- ListPanelScreen_mode.py, layout/main.png: Adapted to even positions.
+
+2011-12-08 David Colmenero
+	- ListPanelScreen_mode.py: fixed freeze problems with videos in odd pos,
+	aspect-ratio videos enabled again.
+
+2011-12-08 David Colmenero
+	- Convert_videos.py: better code and now use rom db to convert found and not
+	disabled videos.
+	- Frontend.py: add need hacky code for audio in pygame-movie
+	(see http://pygame.org/docs/ref/movie.html)
+	- ListPanelScreen_mode.py: Revert aspect rate video, vertical videos give
+	some freeze problems (Ex arbalest),	minor bugs fixed on video loading.
+
+2011-12-07 David Colmenero
+	- ListPanelScreen_mode.py: More Acelerated the movement across the list.
+
+2011-11-30 David Colmenero
+	- Convert_videos.py: return values fixed.
+	- Util.py: Added new option for configurable video wait seconds, please
+	refresh your cfg file.
+	- ListPanelScreen_mode.py: Fixed screensaver/video bug.
+
+2011-11-30 David Colmenero
+	- Convert_videos.py: Clean old code, more checks and set hi-quality
+	conversion as default.
+	- Frontend.py: Simplified resize image code, added universal resize code.
+	- ListPanelScreen_mode.py: now video with correct aspect ratio.
+
+2011-11-30 David Colmenero
+	- ListPanelScreen_mode.py, Util.py: Added support for mpeg video
+	(no sound, wrong aspect)
+	- Convert_videos.py: new tool for convert AVI videos to MPEG1 pygame
+	compatible (need ffmpeg installed)
+
+2011-11-18 David Colmenero
+	- Util.py: fixed create table flag, now resets correctly.
+
+2011-09-29 Miguel de Dios
+	- Util.py: fixed before pyRetro try to create config files when only
+	call for check version or print help usage.
+	
+	- pyRetro.py: cleaned source code.
+	
+2011-10-01 David Colmenero
+	- Util.py: fixed crash on load/save value table
+
+2011-10-01 David Colmenero
+	- Util.py: times_executed now not null and default 0
+	Fixes issue 9 (but refresh your db is need it)
+
+2011-10-01 David Colmenero
+	- SQLite commit changes once, boost db inserts
+
+2011-10-01 David Colmenero
+	- Added rom info db parsing mameinfo.xml (almost code taken from wah!cade)
+
+2011-09-30 David Colmenero
+	- Util.py: added mameinfo.xml creation.
+
+2011-09-29 David Colmenero
+	- Util.py, FrontEnd.py: added Windowed argument (almost for testing,
+	disabled by default), clean screen on execute_rom.
+	
+	- ListPanelScreen_mode.py: fixed first_rom crash, added K_1 to execute
+	rom.
+	
+	- ListFullScreen_mode.py: added K_1 to execute rom.
+	
+2011-09-29 Miguel de Dios
+	- Util.py: added functions "load_value_db" and "save_value_db" for
+	save some data (as some config vars) in the DB for the next
+	executions.
+	
+	- Frontend.py: changed to use one var for the file name of DB.
+	
+	- ListPanelScreen_mode.py: changed to use the the functions DB, now
+	the config var "internal_selected_rom" is in the DB instead to
+	config file.
+
+2011-09-28 Miguel de Dios
+	- Util.py: added the layout mode (with value 3) and the value
+	"internal_selected_rom". And set by default the layout mode.
+	
+	- Frontend.py: fixed the name of window in each mode.
+	
+	- ListPanelScreen_mode.py: added new mode to show the frontend,
+	thanks David Skywalker.
+	
+	- ListFullScreen_mode.py: removed the lost trace.
+	
+	- layout/main.png, layout/default_snap.png: added the default skin
+	for layout mode.
+	
+	Thanks David Skywalker (aka D_Skywalk) for the patch.
+
+2011-09-28 Miguel de Dios
+	- ListFullScreen_mode.py: fixed the reload default background when
+	the previous select rom in the list have snapshot. And improved the
+	show the snapshot when the select rom have a snap and before it have
+	not.
+
+2011-09-27 Miguel de Dios
+	- background_default.png, background_default_small.png: changed the
+	color of more dark for to read better the list.
+	
+	- ListFullScreen_mode.py: fixed the old overwrite value background,
+	now use the config file value.
+
+2011-09-27 Miguel de Dios
+	- tools/Disabling_unsnaped_roms.py: now the make the sql commit and
+	check the absolute file exists.
+	
+	- ListFullScreen_mode.py: fixes the 8bit png snapshot and cleaned
+	source code, now there are "paint_background" and "load_background"
+	methods.
+	
+	Thanks dantoine@gmail.com for the patch.
+
+2011-09-27 Miguel de Dios
+	- Frontend.py: fixed the execute roms.
+	
+	- ListFullScreen_mode.py: fixed the screensaver time in some cases
+	don't reset.
+
+2011-09-27 Miguel de Dios
+	- Frontend.py: fixed when try to load other thing that is not a
+	image file.
+
+2011-09-27 Miguel de Dios
+	- Frontend.py: cleaned source code style, and added method
+	"translate_idrom_to_arraykey".
+	
+	- ListFullScreen_mode.py: rewrote the method "run" and added methods
+	"paint_background", "paint_list_roms" and "check_limits_select_rom".
+	Now the list is more pretty (the output and the source code) and
+	you can run back in the list.
+
+2011-09-26 Oscar Jose Rivera Verde
+	- Frontend.py: fixed bug in run_screen_saver.
+
+2011-09-19 Oscar Jose Rivera Verde
+	- Tools: Added two tools, one to delete bad roms and the other to
+	disable all roms that have no snap from selection menu.
+
+2011-09-18 Oscar Jose Rivera Verde
+	- Util.py: added times-executed field to create_db.
+	- Frontend.py: Change the times-executed method.
+
+2011-09-12 Miguel de Dios
+	- tools: added subfolder for the tools.
+
+2011-09-08 Miguel de Dios
+	- Frontend.py: fixes some rare cases that the screensaver have not
+	a newimage.
+
+2011-09-07 Miguel de Dios
+	- Util.py: added in the default conf more parameters for screensaver
+	"dir_default_images_screensaver",
+	"random_percent_default_images_screensaver" and the default image
+	to show when the rom have not a snapshot. Optimize some the code
+	in method "update_db". And added the field "times_executed" in the
+	DB. And the method "parse_config_file" read all parameters in the
+	conf file.
+	
+	- Frontend.py: added source code to show the screen saver.
+	
+	- ListFullScreen_mode.py: added source to use the screen saver and
+	show the default background when the rom have not snapshot.
+	
+	- screen_saver_images/Rainbow_Islands_PCB.jpg,
+	screen_saver_images/Nintendo_Donkey_Kong_pcb2.jpg: default images
+	for screensaver (you can add or change more). The images from the
+	wikicommons and are public domain, see the metada.
+	
+	- background_default.png, background_default_small.png: default
+	image for to show when the rom have not snapshot, the image is from
+	flicrk and is creative commons, see the metada.
+
+2011-08-31 Miguel de Dios
+	- Util.py: fixed the update DB, the name of table.
+
+2011-08-31 Miguel de Dios
+	- Util.py: cleaned source code, and now the object Util in the
+	constructor to parse the command line parameters. And update the
+	DB with some new columns "status", "custom_options".
+	
+	- Frontend.py: it is added the custom options and debug mode.
+	
+	- ListFullScreen_mode.py: cleaned source code, and now the attribute
+	debug is used correctly.
+	
+	- pyRetro.py: cleaned source code, and now it use the options var.
+	
+2011-08-22 Miguel de Dios
+	- Frontend.py: added function resize with fixed method (float
+	operations).
+	
+	- ListFullScreen_mode.py: use new call to resize in the class
+	Frontend.
+	
+2011-08-22 Miguel de Dios
+	- Util.py: still reorganiced and cleaned source code. And now check
+	the table "roms" in DB have all fields (as last version) and when
+	rescan the roms directories add only the new roms and hidde the roms
+	not found. And you can disabled the games across the sqlite tool
+	into the DB when you mark the field disabled as 1.
+	
+	- Frontend.py: now the frontend show only the games that are enabled
+	or found.
+
+2011-08-20 Miguel de Dios
+	- Frontend.py: hidden the mouse pointer.
+
+2011-08-20 Miguel de Dios
+	- pyRetro.py: erased in the call of constructor Frontend the unused
+	param.
+	
+	- Frontend.py, ListFullScreen_mode.py: still reorganized and cleaned
+	source code.
+
+2011-08-20 Miguel de Dios
+	- Util.py, Frontend.py, pyRetro.py: still reorganized and cleaned
+	source code.
+
+2011-08-20 Miguel de Dios
+	- Util.py, pyRetro.py: start to reorganize and cleaned source code.
+	
+	- Frontend.py: fixed when only press one to one the directions to
+	move in the game list.
+
+2011-08-19 Miguel de Dios
+	- Frontend.py: change code for to still move across the list when
+	hold up or down key.
+	
+	Fixes: #2
+
+2011-08-17 Miguel de Dios
+	- Frontend.py: search and replace the project old name.
+
+2011-08-17 Miguel de Dios
+	- TODO, Readme: fill the files with the first content version of
+	text.
+
+2011-08-17 Miguel de Dios
+	- TODO, ChangeLog, Readme: added first version of files.
+	
+	- Frontend.py, pyRetro.py: added first version of pyRetro, now it is
+	run with only "Snapshot Fullscreen" mode, with more tiny bugs and
+	it has the need to improve and add features.
