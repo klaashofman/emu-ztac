@@ -32,8 +32,6 @@ from ListWeird_mode import *
 from ListPanelScreen_mode import *
 
 
-
-
 class Frontend:
     framesPerSecond = 60
     clock = None
@@ -315,7 +313,8 @@ class Frontend:
         cursor.execute("SELECT rom, name, custom_options, status, roms.id, year, manufacturer, display_type, display_screen, input_players, input_control, input_buttons \
                                                 FROM roms LEFT JOIN rom_info \
                                                 ON roms.id = rom_info.id WHERE disabled = 0 AND found = 1 ORDER BY name ASC;")
-        return cursor.fetchall()
+        # return cursor.fetchall()
+        return ["mamam", "ksksks"]
 
     def add_to_favorities(self, select_rom):
         """Adds a rom to favorities"""

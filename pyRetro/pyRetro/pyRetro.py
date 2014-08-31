@@ -30,7 +30,7 @@ def main():
             frontend = Frontend(config_mode=True, util_param = util)
         elif util.options['scan_roms']:
             print("Scan new roms")
-            util.scan_roms()
+            # util.scan_roms()
             frontend = Frontend(config_mode=False, util_param = util)
         else:
             frontend = Frontend(config_mode=False, util_param = util)

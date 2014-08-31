@@ -67,11 +67,11 @@ class Util:
             self.parse_config_file()
             self.get_mame_confs()
             self.create_mameinfo()
-            if self.db_fail():
-                self.create_db()
-                self.scan_roms()
-            else:
-                self.update_db()
+            #if self.db_fail():
+                #self.create_db()
+                # self.scan_roms()
+            #else:
+                #self.update_db()
         else:
             print("Don't exist the config file in " + self.file_config)
             print("Create the default config.")
@@ -79,8 +79,8 @@ class Util:
             self.parse_config_file()
             self.get_mame_confs()
             self.create_mameinfo()
-            self.create_db()
-            self.scan_roms()
+            # self.create_db()
+            # self.scan_roms()
 
 
     def load_value_db(self, token, default_var = None):
