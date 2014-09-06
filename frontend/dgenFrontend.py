@@ -22,7 +22,6 @@ class Frontend:
     fontname = 'Arial'
     margin_between_roms = 10
     vertical_distance_between_roms = font_size + margin_between_roms
-    # list_roms = [[1, "Jommeke"], [2, "Filiberke"], [3, "Rossemieke"], [4, "c"], [5, "d"], [6, "e"], [7,"f"], [8, "g"]]
     db = None
 
     def __init__(self, db_param = None):

@@ -13,7 +13,7 @@ import time
 class Db:
     options = {}
     options['debug'] = True
-    options['romdir'] ="./roms"
+    options['romdir'] ="../roms"
     frontend_db = None
 
     def __init__ (self):
